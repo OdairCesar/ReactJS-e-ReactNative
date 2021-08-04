@@ -9,13 +9,24 @@ import Sortear from './components/desafios/Sorteio'
 import Card from './components/layout/Card'
 import Familia from './components/basico/Familia'
 import FamiliaMembro from './components/basico/FamiliaMembro'
+import ListaAlunos from './components/repeticao/ListaAlunos'
+import ListaProdutos from './components/desafios/ListaProdutos'
 
 export function App (props) {
     return(
         <div className='App'>
             <h1>Fundamentos React</h1>
             <div className='Cards'>
-                <Card titulo='Componente com Filhos'>
+
+                <Card titulo='#07 - Desafio Repetição'>
+                    <ListaProdutos></ListaProdutos>
+                </Card>
+
+                <Card titulo='#06 - Repetição'>
+                    <ListaAlunos></ListaAlunos>
+                </Card>
+
+                <Card titulo='#05 - Componente com Filhos'>
                     <Familia sobrenome='Ferreira' >
                         <FamiliaMembro
                             nome='Pedro'>
@@ -28,6 +39,7 @@ export function App (props) {
                         </FamiliaMembro>
                     </Familia>
                 </Card>
+
                 <Card titulo='#04 - Desafio Aleatorio' color='red'>
                     <Sortear min={0} max={10}/>
                 </Card>

@@ -1,0 +1,13 @@
+.desafioRepeticao table{
+    width: 100%;
+}
+.desafioRepeticao th{
+    background-color: #093131;
+    color: white;
+}
+.desafioRepeticao .Par{
+    background-color: #aeffff;
+}
+.desafioRepeticao .Impar{
+    background-color: #4fffff;
+}
