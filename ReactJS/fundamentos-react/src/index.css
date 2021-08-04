@@ -1,6 +1,7 @@
 body{
     background-color:dimgray;
     font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     padding: 0px;
     margin: 0px;
@@ -20,4 +21,7 @@ div{
 .pri-component{
     background-color: darksalmon;
     color: royalblue;
+}
+.sorteio{
+    background-color: blueviolet;
 }
