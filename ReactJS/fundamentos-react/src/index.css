@@ -1,27 +1,17 @@
-body{
-    background-color:dimgray;
-    font-size: 18px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    padding: 0px;
-    margin: 0px;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+body {
+    font-family: Oswald;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
 }
 
-div{
-    background-color: slategray;
-    border-radius: 10px 10px 10px 10px;
-    padding: 5px;
-    margin: 5px;
+h1, h2, h3 {
+    font-weight: 200;
 }
 
-.params{
-    background-color:linen;
-    color:darkslategrey;
-}
-.pri-component{
-    background-color: darksalmon;
-    color: royalblue;
-}
-.sorteio{
-    background-color: blueviolet;
+h2, h3 {
+    margin: 0;
 }
