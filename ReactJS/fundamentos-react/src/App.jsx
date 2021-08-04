@@ -7,12 +7,27 @@ import ComParametro from './components/basico/ComParametros'
 import Fragmento from './components/basico/Fragmento'
 import Sortear from './components/desafios/Sorteio'
 import Card from './components/layout/Card'
+import Familia from './components/basico/Familia'
+import FamiliaMembro from './components/basico/FamiliaMembro'
 
 export function App (props) {
     return(
         <div className='App'>
             <h1>Fundamentos React</h1>
             <div className='Cards'>
+                <Card titulo='Componente com Filhos'>
+                    <Familia sobrenome='Ferreira' >
+                        <FamiliaMembro
+                            nome='Pedro'>
+                        </FamiliaMembro>
+                        <FamiliaMembro
+                            nome='Maria'>
+                        </FamiliaMembro>
+                        <FamiliaMembro
+                            nome='João'>
+                        </FamiliaMembro>
+                    </Familia>
+                </Card>
                 <Card titulo='#04 - Desafio Aleatorio' color='red'>
                     <Sortear min={0} max={10}/>
                 </Card>
