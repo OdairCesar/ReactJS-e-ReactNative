@@ -1,18 +1,12 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import './index.css'
-import Primeiro from './components/Primeiro'
-import ComParametro from './components/ComParametros'
+import { App } from './App'
 
 
-const tag = <strong>Outra forma de mostra coisas</strong>
+const tag = <strong>Ola Mundo!!</strong>
 
 ReactDOM.render(
-  <div>
-    <p>Ola Mundo !!</p> 
-    <p>{ tag }</p> 
-    <Primeiro />
-    <ComParametro titulo="Segundo componente" subtitulo="Passando info via paramentros" numero={9.2} />
-  </div>,
+  <App enviarStrong={tag}/>, 
   document.getElementById('root')
 );
