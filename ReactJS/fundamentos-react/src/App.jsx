@@ -13,6 +13,8 @@ import ListaAlunos from './components/repeticao/ListaAlunos'
 import ListaProdutos from './components/desafios/ListaProdutos'
 import ParOuImpar from './components/condicional/ParOuImpar'
 import UsuarioInfo from './components/condicional/UsuarioInfo'
+import DiretaPai from './components/comunicacao/DiretaPai'
+import IndiretaPai from './components/comunicacao/IndiretaPai'
 
 export function App (props) {
     return(
@@ -20,7 +22,12 @@ export function App (props) {
             <h1>Fundamentos React</h1>
             <div className='Cards'>
                 
-                <Card titulo='#09 - Comunicação' color='#623AA2'>
+                <Card titulo='#09 - Comunicação Indireta' color='#8BAD39'>
+                    <IndiretaPai></IndiretaPai>
+                </Card>
+
+                <Card titulo='#09 - Comunicação Direta' color='#623AA2'>
+                    <DiretaPai></DiretaPai>
                 </Card>
 
                 <Card titulo='#08 - Renderização Condicional' color='#9F44D3'>
