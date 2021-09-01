@@ -16,6 +16,7 @@ import UsuarioInfo from './components/condicional/UsuarioInfo'
 import DiretaPai from './components/comunicacao/DiretaPai'
 import IndiretaPai from './components/comunicacao/IndiretaPai'
 import Input from './components/formulario/Input'
+import Contador from './components/contador/Contador'
 
 export function App (props) {
     return(
@@ -23,6 +24,10 @@ export function App (props) {
             <h1>Fundamentos React</h1>
             <div className='Cards'>
                 
+                <Card titulo='#09 - Comunicação Indireta' color='#8BAD39'>
+                    <Contador></Contador>
+                </Card>
+
                 <Card titulo='#09 - Comunicação Indireta' color='#8BAD39'>
                     <Input></Input>
                 </Card>
