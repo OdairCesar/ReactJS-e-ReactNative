@@ -17,22 +17,27 @@ import DiretaPai from './components/comunicacao/DiretaPai'
 import IndiretaPai from './components/comunicacao/IndiretaPai'
 import Input from './components/formulario/Input'
 import Contador from './components/contador/Contador'
+import Mega from './components/mega/Mega'
 
 export function App (props) {
     return(
         <div className='App'>
             <h1>Fundamentos React</h1>
             <div className='Cards'>
-                
-                <Card titulo='#09 - Comunicação Indireta' color='#8BAD39'>
+
+                <Card titulo='#13 - Desafio MegaSena' color='#2EF80A'>
+                    <Mega></Mega>
+                </Card>
+
+                <Card titulo='#12 - Contador' color='#736EFE'>
                     <Contador></Contador>
                 </Card>
 
-                <Card titulo='#09 - Comunicação Indireta' color='#8BAD39'>
+                <Card titulo='#11 - Componente Controlado (Input)' color='#8C1BAB'>
                     <Input></Input>
                 </Card>
  
-                <Card titulo='#09 - Comunicação Indireta' color='#8BAD39'>
+                <Card titulo='#10 - Comunicação Indireta' color='#00E4FF'>
                     <IndiretaPai></IndiretaPai>
                 </Card>
 
