@@ -11,7 +11,7 @@ export default function App(props) {
 
   return (
     <div className="App">
-      <h1>Exervicio React-Redux (Simples)</h1>
+      <h1>Exercicio React-Redux (Simples)</h1>
       <div className='linha'>
         <Intervalo></Intervalo>
       </div>
