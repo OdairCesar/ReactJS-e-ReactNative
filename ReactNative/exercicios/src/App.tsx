@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet } from 'react-native'
-import ContadorV2 from './components/contador/contadorV2'
+import ContadorV2 from './components/contador/ContadorV2'
 // import Pai from './components/indireta/Pai'
 // import Pai from './components/direta/Pai'
 // import Primeiro from './components/Primeiro'
