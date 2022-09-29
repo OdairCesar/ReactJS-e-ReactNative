@@ -1,6 +1,11 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet } from 'react-native'
-import DigiteSeuNome from './components/DigiteSeuNome'
+import Mega from './components/mega/Mega'
+// import FlexboxV4 from './components/layout/FlexboxV4'
+// import FlexboxV3 from './components/layout/FlexboxV3'
+// import FlexboxV2 from './components/layout/FlexboxV2'
+// import FlexboxV1 from './components/layout/FlexboxV1'
+// import DigiteSeuNome from './components/DigiteSeuNome'
 // import ListaProdutoV2 from './components/produtos/ListaProdutoV2'
 // import ListaProduto from './components/produtos/ListaProduto'
 // import UsuarioLogado from './components/UsuarioLogado'
@@ -22,7 +27,12 @@ import DigiteSeuNome from './components/DigiteSeuNome'
 export default function App() {
   return (
     <SafeAreaView style={style.App}>
+      <Mega qtdeNumeros={8}/>
       {/*
+      <FlexboxV4 />
+      <FlexboxV3 />
+      <FlexboxV2 />
+      <FlexboxV1 />
       <DigiteSeuNome />
       <ListaProdutoV2 />
       <ListaProduto />
