@@ -1,6 +1,14 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet } from 'react-native'
-import ContadorV2 from './components/contador/ContadorV2'
+import DigiteSeuNome from './components/DigiteSeuNome'
+// import ListaProdutoV2 from './components/produtos/ListaProdutoV2'
+// import ListaProduto from './components/produtos/ListaProduto'
+// import UsuarioLogado from './components/UsuarioLogado'
+// import Familia from './components/relacao/Familia'
+// import Membro from './components/relacao/Membro'
+// import Parimpar from './components/Parimpar'
+// import ContadorV2 from './components/contador/ContadorV2'
+// import Diferenciar from './components/Diferenciar'
 // import Pai from './components/indireta/Pai'
 // import Pai from './components/direta/Pai'
 // import Primeiro from './components/Primeiro'
@@ -14,21 +22,35 @@ import ContadorV2 from './components/contador/ContadorV2'
 export default function App() {
   return (
     <SafeAreaView style={style.App}>
-      <ContadorV2></ContadorV2>
       {/*
-      <Pai></Pai>
-      <Contador inicial={58} passo={5}></Contador>
-      <Contador></Contador>
-      <Botao></Botao>
-      <Titulo principal='Cadastro Produto' segundario='Tela de cadastro de produto'></Titulo>
-      <MiniMax min={3} max={15}></MiniMax>
-      <Aleatorio de={5} ate={18}></Aleatorio>
+      <DigiteSeuNome />
+      <ListaProdutoV2 />
+      <ListaProduto />
+      <UsuarioLogado usuario={{nome: 'Paulo', email: 'odairferreira97@gmail.com'}}/>
+      <Familia nome="Arruda">
+        <Membro nome="Bia" sobrenome='Arruda' />
+        <Membro nome="Carlos" sobrenome='Arruda' />
+      </Familia>
+      <Familia nome="Silva">
+        <Membro nome="Ana" sobrenome='Silva' />
+        <Membro nome="Julia" sobrenome='Silva' />
+      </Familia>
+      <Parimpar num={7}/>
+      <Diferenciar />
+      <ContadorV2 />
+      <Pai />
+      <Contador inicial={58} passo={5} />
+      <Contador />
+      <Botao />
+      <Titulo principal='Cadastro Produto' segundario='Tela de cadastro de produto' />
+      <MiniMax min={3} max={15} />
+      <Aleatorio de={5} ate={18} />
       <Primeiro />
       <Padrao />
       <Comp1 />
       <Comp2 />
       */}
-    </SafeAreaView>
+    </SafeAreaView >
   )
 }
 

@@ -9,8 +9,8 @@ interface typeProps {
 const ContadorDisplay : React.FC<typeProps> = ({num}) => {
 
   return(
-    <View>
-      <Text style={Estilo.textG}>{num}</Text>
+    <View style={style.Display}>
+      <Text style={[Estilo.textG, style.DisplayText]}>{num}</Text>
     </View>
   )
 }
@@ -20,7 +20,8 @@ export default ContadorDisplay
 const style = StyleSheet.create({
   Display: {
     backgroundColor: '#000',
-    padding: 20
+    padding: 20,
+    width: 300
   },
 
   DisplayText: {
