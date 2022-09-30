@@ -1,18 +1,6 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 
-const Mime= () => {
-  return(
-    <View style={styles.container}>
-      <View style={styles.coreMine}></View>
-      <View style={styles.line}></View>
-      <View style={[styles.line, {transform: [{rotate: '45deg' }]} ]}></View>
-      <View style={[styles.line, {transform: [{rotate: '90deg' }]} ]}></View>
-      <View style={[styles.line, {transform: [{rotate: '135deg' }]} ]}></View>
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
@@ -34,3 +22,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 })
+
+const Mine = () => {
+  return(
+    <View style={styles.container}>
+      <View style={styles.coreMine}></View>
+      <View style={styles.line}></View>
+      <View style={[styles.line, {transform: [{rotate: '45deg' }]} ]}></View>
+      <View style={[styles.line, {transform: [{rotate: '90deg' }]} ]}></View>
+      <View style={[styles.line, {transform: [{rotate: '135deg' }]} ]}></View>
+    </View>
+  )
+}
+
+export default Mine
