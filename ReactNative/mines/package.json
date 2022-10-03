@@ -1,5 +1,5 @@
 {
-  "name": "mimes",
+  "name": "mines",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -25,8 +25,7 @@
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.72.1",
-    "react-test-renderer": "18.1.0",
-    "typescript": "^4.8.4"
+    "react-test-renderer": "18.1.0"
   },
   "jest": {
     "preset": "react-native"

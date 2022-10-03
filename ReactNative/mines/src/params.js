@@ -1,7 +1,6 @@
 import { Dimensions } from "react-native"
-import Params from "./interfaces/Params"
 
-const params: Params = {
+const params = {
   blockSize: 30,
   borderSize: 5,
   fontSize: 15,

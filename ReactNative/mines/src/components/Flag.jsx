@@ -1,7 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, ViewStyle, Text } from 'react-native'
-import params from '../params'
-import Mine from './Mine'
+import { View, StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -69,11 +67,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export interface FlagPropsType{
-  bigger?: boolean
-}
-
-const Field: React.FC<FlagPropsType> = ({ bigger = false }) => {
+const Field = ({ bigger }) => {
   return (
     <View style={styles.container}>
       <View style={[styles.flagpole, bigger ? styles.flagpoleBigger : null]} />
