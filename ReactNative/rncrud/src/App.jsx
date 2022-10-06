@@ -4,6 +4,7 @@ import UserForm from './views/UserForm'
 import { Button, Icon } from '@rneui/base'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { UsersProvider } from './hooks/UsersContext'
 
 const App = () => {
 
@@ -20,25 +21,27 @@ const App = () => {
   }
 
   return (
-    <NavigationContainer>
-      <StackNav.Navigator screenOptions={screenOptions} initialRouteName="UserList">
-        <StackNav.Screen name="UserList" component={UserList} 
-          options={({ navigation }) => {
-            return {
-              title: 'Lista de usúarios', 
-              headerRight: () => (
-                <Button type="clear"
-                  onPress={() => navigation.navigate('UserForm')}
-                  icon={
-                    <Icon name="add" size={25} color="white" />
-                  } 
-                />
-              )
-            }
-          }}/>
-        <StackNav.Screen name="UserForm" component={UserForm} options={{title: 'Formúlario de usúarios'}}/>
-      </StackNav.Navigator>
-    </NavigationContainer>
+    <UsersProvider>
+      <NavigationContainer>
+        <StackNav.Navigator screenOptions={screenOptions} initialRouteName="UserList">
+          <StackNav.Screen name="UserList" component={UserList} 
+            options={({ navigation }) => {
+              return {
+                title: 'Lista de usúarios', 
+                headerRight: () => (
+                  <Button type="clear"
+                    onPress={() => navigation.navigate('UserForm')}
+                    icon={
+                      <Icon name="add" size={25} color="white" />
+                    } 
+                  />
+                )
+              }
+            }}/>
+          <StackNav.Screen name="UserForm" component={UserForm} options={{title: 'Formúlario de usúarios'}}/>
+        </StackNav.Navigator>
+      </NavigationContainer>
+    </UsersProvider>
   )
 }
 

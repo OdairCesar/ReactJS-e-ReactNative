@@ -1,9 +1,11 @@
 import { Avatar, ListItem, Button, Icon } from '@rneui/base'
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, FlatList, Alert } from 'react-native'
-import users from '../data/users'
+import UsersContext from '../hooks/UsersContext'
 
 const UserList = (props) => {
+
+  const { state, dispatch } = useContext(UsersContext)
 
   const keyExtractor = (item, index) => index.toString()
 
@@ -12,7 +14,12 @@ const UserList = (props) => {
   const deleteUser = user => {
     Alert.alert('Excluir Usúario', 'Deseja excluir o usúario', [{
       text: 'Sim',
-      onPress: () => console.warn('delete', user.id)
+      onPress() {
+        dispatch({
+          type: 'deleteUser',
+          payload: user
+        })
+      }
     }, {
       text: 'Não'
     }])
@@ -44,7 +51,7 @@ const UserList = (props) => {
 
   return (
     <View>
-      <FlatList data={users} keyExtractor={keyExtractor} renderItem={getUserItem}/>
+      <FlatList data={state.users} keyExtractor={keyExtractor} renderItem={getUserItem}/>
     </View>
   )
 }
