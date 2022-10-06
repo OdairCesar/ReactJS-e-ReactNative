@@ -1,20 +1,21 @@
 import React from "react"
-import { createDrawerNavigator } from "@react-navigation/drawer"
+// import { createDrawerNavigator } from "@react-navigation/drawer"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import TelaA from "../views/TelaA"
 import TelaB from "../views/TelaB"
 import TelaC from "../views/TelaC"
 
-const NativeDrawer = createDrawerNavigator()
+const DrawerNav = createNativeStackNavigator()
 
 const Drawer = () => {
   return (
-    <NativeDrawer.Navigator initialRouteName='TelaB'>
-      <NativeDrawer.Screen name='TelaA' component={TelaA}/>
+    <DrawerNav.Navigator initialRouteName='TelaB'>
+      <DrawerNav.Screen name='TelaA' component={TelaA}/>
 
-      <NativeDrawer.Screen name='TelaB' component={TelaB} />
+      <DrawerNav.Screen name='TelaB' component={TelaB} />
       
-      <NativeDrawer.Screen name='TelaC' component={TelaC} />
-    </NativeDrawer.Navigator>
+      <DrawerNav.Screen name='TelaC' component={TelaC} />
+    </DrawerNav.Navigator>
   )
 }
 
