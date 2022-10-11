@@ -1,15 +1,17 @@
 const express = require('express')
 const app = express()
+const db = require('./config/db')
+const consign = require('consign')
 
-app.get('/', (req, res, next) => {
-  console.log('Func 0')
-  next()
-})
+consign()
+  .then('./config/middlewares.js')
+  .then('./api')
+  .then('./config/routes.js')
+  .into(app)
 
-app.get('/', (req, res, next) => {
-  console.log('Func 1')
-  res.status(200).send("Meu Backend")
-})
+
+app.db = db
+
 
 app.listen(3000, () => {
   console.log('Back-End iniciado com sucesso')
