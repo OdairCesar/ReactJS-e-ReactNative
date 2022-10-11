@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderColor: '#AAA',
     borderBottomWidth: 1,
+    backgroundColor: '#fff',
   },
 
   checkContainer: {
@@ -51,6 +52,24 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingHorizontal: 20,
   },
+
+  left: {
+    flex: 1,
+    backgroundColor: 'red',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  excludeText: {
+    fontFamily: commonStyles.fontFamily,
+    color: '#fff',
+    fontSize: 20,
+    margin: 10,
+  },
+
+  excludeIcon: {
+    marginLeft: 10,
+  }
 })
 
 export default styles

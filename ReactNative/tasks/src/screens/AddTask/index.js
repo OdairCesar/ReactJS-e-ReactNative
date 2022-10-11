@@ -12,10 +12,13 @@ const initialState = {
 
 export default class AddTask extends Component {
 
-  state = {
-    ...initialState
-  }
+  state = { ...initialState }
 
+
+  /**
+   * @description Salva uma nova tarefa
+   * 
+   */
   save = () => {
 
     const newTask = {
@@ -27,28 +30,7 @@ export default class AddTask extends Component {
     this.setState({ ...initialState })
   }
 
-  getDatePicker = () => {
-    let datePicker = <RNDateTimePicker value={this.state.date} onChange={(_, date) => this.setState({ date, showDatePicker: false })} onC mode='date' />
-
-    const dateString = moment(this.state.date).locale('pt-br').format('ddd, D [de] MMMM [de] YYYY')
-
-    if(Platform.OS === 'android') {
-      datePicker = (
-        <View>
-          <TouchableOpacity onPress={() => this.setState({ showDatePicker: true})}>
-            <Text style={styles.date}>
-              {dateString}
-            </Text>
-          </TouchableOpacity>
-
-          {this.state.showDatePicker && datePicker }
-        </View>
-      )
-    }
-
-    return datePicker
-  }
-
+  
   render() {
     return (
       <Modal transparent={true} visible={this.props.isVisible} onRequestClose={this.props.onCancel} animationType='fade'>
@@ -61,7 +43,19 @@ export default class AddTask extends Component {
 
           <TextInput style={styles.input} placeholder='Informe a descrição' value={this.state.desc} onChangeText={desc => this.setState({ desc })} />
 
-          {this.getDatePicker()}
+          {Platform.OS === 'android' 
+            ? <View>
+                <TouchableOpacity onPress={() => this.setState({ showDatePicker: true})}>
+                  <Text style={styles.date}>
+                    {moment(this.state.date).locale('pt-br').format('ddd, D [de] MMMM [de] YYYY')}
+                  </Text>
+                </TouchableOpacity>
+  
+                {this.state.showDatePicker 
+                  && <RNDateTimePicker value={this.state.date} onChange={(_, date) => this.setState({ date, showDatePicker: false })} onC mode='date' /> }
+              </View>
+            : <RNDateTimePicker value={this.state.date} onChange={(_, date) => this.setState({ date, showDatePicker: false })} onC mode='date' />
+          }
 
           <View style={styles.btns}>
             <TouchableOpacity onPress={this.props.onCancel}>

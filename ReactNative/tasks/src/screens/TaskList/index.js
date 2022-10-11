@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, ImageBackground, StyleSheet, FlatList, TouchableOpacity, Platform, Alert } from 'react-native'
+import { View, Text, ImageBackground, FlatList, TouchableOpacity, Alert } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import moment from 'moment'
 import 'moment/locale/pt-br'
 
@@ -11,39 +12,23 @@ import Task from '../../components/Task'
 import AddTask from '../AddTask'
 import styles from './styles'
 
+const initialState = { 
+  showDoneTasks: true,
+  showAddTask: false,
+  visibleTasks: [],
+  tasks: []
+}
 
 export default class TaskList extends Component {
 
-  state = {
-    showDoneTasks: true,
-    showAddTask: false,
-    visibleTasks: [],
-    tasks: [{
-        id: Math.random(),
-        desc: 'Comprar Livro de React Native',
-        estimateAt: new Date(),
-        doneAt: new Date(),
-      }, {
-        id: Math.random(),
-        desc: 'Ler Livro de React Native',
-        estimateAt: new Date(),
-        doneAt: null,
-      }, {
-        id: Math.random(),
-        desc: 'Iniciar Curso de React Native',
-        estimateAt: new Date(),
-        doneAt: new Date(),
-      }, {
-        id: Math.random(),
-        desc: 'Terminar Curso de React Native',
-        estimateAt: new Date(),
-        doneAt: new Date(),
-      },
-    ]
-  }
+  state = { ...initialState  }
 
-  componentDidMount = () => {
-    this.filterTasks()
+  componentDidMount = async () => {
+
+    const state = JSON.parse(await AsyncStorage.getItem('tasksState')) || initialState
+
+    this.setState(state, this.filterTasks)
+
   }
 
 
@@ -88,6 +73,8 @@ export default class TaskList extends Component {
 
     this.setState({ visibleTasks })
 
+    AsyncStorage.setItem('tasksState', JSON.stringify(this.state))
+
   }
   
 
@@ -104,7 +91,7 @@ export default class TaskList extends Component {
 
   /**
    * @description Marca ou Desmarca tarefa como feita
-   * @param {string} taskId 
+   * @param {string} taskId Id da task que será marcada ou desmarcada como feita
    * 
    */
   toggleTask = taskId => {
@@ -121,6 +108,21 @@ export default class TaskList extends Component {
 
   }
 
+
+  /**
+   * @description Marca ou Desmarca tarefa como feita
+   * @param {string} id Id da task que será deletada
+   * 
+   */
+  deleteTask = id => {
+
+    const tasks = this.state.tasks.filter(task => task.id !== id)
+
+    this.setState({ tasks }, this.filterTasks)
+
+  }
+
+  
   render() {
     const today = moment().locale('pt-br').format('ddd, D [de] MMMM')
 
@@ -156,7 +158,8 @@ export default class TaskList extends Component {
                 estimateAt={item.estimateAt} 
                 doneAt={item.doneAt} 
                 desc={item.desc} 
-                toggleTask={this.toggleTask}/> 
+                onToggleTask={this.toggleTask}
+                onDelete={this.deleteTask}/> 
             )}
           />
         </View>
