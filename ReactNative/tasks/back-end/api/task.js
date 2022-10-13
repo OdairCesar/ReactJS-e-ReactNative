@@ -19,6 +19,7 @@ module.exports = app => {
         }
 
         req.body.userId = req.user.id
+        if (!req.body.estimateAt) req.body.estimateAt = moment().endOf('day').toDate()
 
         app.db('tasks')
             .insert(req.body)
