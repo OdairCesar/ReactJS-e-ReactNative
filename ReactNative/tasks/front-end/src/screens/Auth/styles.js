@@ -30,12 +30,6 @@ const styles = StyleSheet.create({
     width: '90%',
   },
 
-  input: {
-    marginTop: 10,
-    backgroundColor: '#fff',
-    padding: Platform.OS == 'ios' ? 15 : 10,
-  },
-
   btn: {
     backgroundColor: '#080',
     marginTop: 10,

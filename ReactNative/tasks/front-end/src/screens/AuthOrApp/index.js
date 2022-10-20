@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, ActivityIndicator, StyleSheet } from 'react-native'
+import { View, ActivityIndicator } from 'react-native'
 import { CommonActions } from '@react-navigation/native';
 
 import axios from 'axios'

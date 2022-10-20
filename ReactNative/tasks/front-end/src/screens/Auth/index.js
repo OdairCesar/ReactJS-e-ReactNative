@@ -8,6 +8,8 @@ import AuthInput from '../../components/AuthInput'
 import backgroundImage from '../../../assets/imgs/login.jpg'
 import styles from './styles'
 
+import { server, showError, showSuccess } from '../../common'
+
 const initialState = {
   name: '',
   email: '',
@@ -71,6 +73,17 @@ class Auth extends Component {
 
 
   render() {
+    const validations = []
+    validations.push(this.state.email && this.state.email.includes('@'))
+    validations.push(this.state.password && this.state.password.length >= 6)
+
+    if (this.state.stageNew) {
+      validations.push(this.state.name && this.state.name.trim().length >= 3)
+      validations.push(this.state.password === this.state.confirmPassword)
+    }
+
+    const validForm = validations.reduce((t, a) => t && a)
+
     return(
       <ImageBackground style={styles.background} source={backgroundImage}>
         <Text style={styles.title}>Tasks</Text>
@@ -85,21 +98,19 @@ class Auth extends Component {
               icon='user' 
               placeholder='Nome'
               value={this.state.name}
-              style={styles.input}
               onChangeText={name => this.setState({ name })} />
           }
           <AuthInput 
             icon='at' 
             placeholder='E-mail'
             value={this.state.email}
-            style={styles.input}
             onChangeText={email => this.setState({ email })} />
 
           <AuthInput 
             icon='lock' 
             placeholder='Senha'
             value={this.state.password}
-            style={styles.input} secureTextEntry={true}
+            secureTextEntry={true}
             onChangeText={password => this.setState({ password })} />
 
           {this.state.stageNew &&
@@ -107,12 +118,12 @@ class Auth extends Component {
               icon='asterisk'
               placeholder='Confirmação de Senha'
               value={this.state.confirmPassword}
-              style={styles.input} secureTextEntry={true}
+              secureTextEntry={true}
               onChangeText={confirmPassword => this.setState({ confirmPassword })} />
           }
 
-          <TouchableOpacity onPress={this.signinOrSignup}>
-            <View style={styles.btn}>
+          <TouchableOpacity onPress={this.signinOrSignup} disabled={!validForm}>
+            <View style={[styles.btn, validForm ? {} : { backgroundColor: '#AAA' }]}>
               <Text style={styles.btnText}>{ this.state.stageNew ? 'Registrar' : 'Entrar' }</Text>
             </View>
           </TouchableOpacity>

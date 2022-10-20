@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: 20,
     marginTop: Platform.OS === 'ios' ? 30 : 10,
-    justifyContent: 'flex-end'
+    justifyContent: 'space-between',
   },
 
   addBtn: {
@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: commonStyles.colors.today,
     justifyContent: 'center',
     alignItems: 'center'
   }
